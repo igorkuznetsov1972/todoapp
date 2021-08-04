@@ -7,7 +7,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
 function App() {
   return (
-    <div className="App col-5">
+    <div className="App">
       <TaskForm />
       <FilterList />
       <TaskList />

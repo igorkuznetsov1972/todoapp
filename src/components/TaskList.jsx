@@ -19,9 +19,9 @@ const TaskList = () => {
   }
 
   return (
-    <ul className="task-list list-group mt-3">
+    <ul className="list-group mt-3">
       {tasks.map(({ text, id, state }) => (
-        <li key={id} className="task-list-item list-group-item d-flex">
+        <li key={id} className="list-group-item d-flex">
           <span className="mr-auto">
             <button type="button" className="btn btn-link" onClick={handleToggleTaskState(id)}>
               {state === 'active' ? text : <s>{text}</s>}

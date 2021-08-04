@@ -17,17 +17,17 @@ const TaskForm = () => {
   };
 
   return (
-    <form className="task-form form-inline" onSubmit={handleSubmit}>
+    <form className="form-inline" onSubmit={handleSubmit}>
       <div className="form-group mx-sm-3">
         <input
           type="text"
           value={text}
-          className="task-form__input form-control"
+          className="form-control"
           placeholder="Enter Task"
           onChange={handleChange}
         />
       </div>
-      <button type="submit" className="btn btn-primary btn-sm task-form__submit">Add</button>
+      <button type="submit" className="btn btn-primary btn-sm">Add</button>
     </form>
   );
 };

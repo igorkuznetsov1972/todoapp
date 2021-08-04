@@ -16,20 +16,24 @@ const Filter = () => {
       return name;
     }
     return (
-      <button
-        type="button"
-        key={state}
-        className="btn btn-link border-0 p-0"
-        onClick={handleSetTasksFilter(state)}
-      >
-        {name}
-      </button>
+      <div className="col">
+        <button
+          type="button"
+          key={state}
+          className="btn btn-link border-2 p-2"
+          onClick={handleSetTasksFilter(state)}
+        >
+          {name}
+        </button>
+      </div>
     );
   };
 
   return (
-    <div className="mt-3 d-flex justify-content-around">
-      {filters.map(renderFilter)}
+    <div className="container">
+      <div className="row">
+        {filters.map(renderFilter)}
+      </div>
     </div>
   );
 };
