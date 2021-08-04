@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import _ from 'lodash';
 
-const initialState = { byId: {}, allIds: [], currentFilterName: 'all' };
+const initialState = { byId: {}, allIds: [] };
 
 const tasksSlice = createSlice({
   name: 'tasks',
@@ -34,10 +34,7 @@ const tasksSlice = createSlice({
         byId: { ...state.byId, [task.id]: updatedTask },
       };
     },
-    setTasksFilter: (state, { payload: { filterName } }) => ({
-      ...state,
-      currentFilterName: filterName,
-    }),
+
   },
 });
 
@@ -45,6 +42,5 @@ export const {
   addTask,
   removeTask,
   toggleTaskState,
-  setTasksFilter,
 } = tasksSlice.actions;
 export default tasksSlice.reducer;

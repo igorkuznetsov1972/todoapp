@@ -1,14 +1,15 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setTasksFilter } from '../slices/tasks';
+// eslint-disable-next-line import/no-named-as-default
+import { setTasksFilter } from '../slices/filter';
 
 const filters = [['all', 'All Tasks'], ['active', 'Active Tasks'], ['finished', 'Finished Tasks']];
 
 const Filter = () => {
-  const currentFilterName = useSelector((state) => state.currentFilterName);
+  const currentFilterName = useSelector((state) => state.filter.currentFilterName);
   const dispatch = useDispatch();
   const handleSetTasksFilter = (filterName) => () => {
-    dispatch(setTasksFilter({ filterName }));
+    dispatch(setTasksFilter(filterName));
   };
 
   const renderFilter = ([state, name]) => {

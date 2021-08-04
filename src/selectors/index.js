@@ -2,7 +2,7 @@ import { createSelector } from 'reselect';
 
 const getTasksById = (state) => state.tasks.byId;
 const getTaskIds = (state) => state.tasks.allIds;
-const getCurrentFilterName = (state) => state.tasks.currentFilterName;
+const getCurrentFilterName = (state) => state.filter.currentFilterName;
 
 const tasksSelector = createSelector(
   getTasksById,
