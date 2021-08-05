@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import _ from 'lodash';
+import { loadState } from '../localStorage';
 
-const initialState = { byId: {}, allIds: [] };
+const initialState = loadState() || { byId: {}, allIds: [] };
 
 const tasksSlice = createSlice({
   name: 'tasks',

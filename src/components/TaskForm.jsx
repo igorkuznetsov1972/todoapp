@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { uniqueId } from 'lodash';
+import { v4 } from 'uuid';
 import { inputTaskName } from '../slices/taskName';
 import { addTask } from '../slices/tasks';
 
@@ -13,7 +13,7 @@ const TaskForm = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addTask({ id: uniqueId(), text, state: 'active' }));
+    dispatch(addTask({ id: v4(), text, state: 'active' }));
   };
 
   return (
