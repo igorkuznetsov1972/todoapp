@@ -14,25 +14,33 @@ const Filter = () => {
 
   const renderFilter = ([state, name]) => {
     if (currentFilterName === state) {
-      return name;
-    }
-    return (
-      <div className="col">
+      return (
         <button
           type="button"
           key={state}
-          className="btn btn-link border-2 p-2"
-          onClick={handleSetTasksFilter(state)}
+          className="btn btn-primary"
         >
           {name}
         </button>
-      </div>
+
+      );
+    }
+    return (
+      <button
+        type="button"
+        key={state}
+        className="btn btn-secondary"
+        onClick={handleSetTasksFilter(state)}
+      >
+        {name}
+      </button>
+
     );
   };
 
   return (
-    <div className="container">
-      <div className="row">
+    <div className="container d-grid gap-2">
+      <div className="d-grid gap-4 d-md-flex justify-content-md-start">
         {filters.map(renderFilter)}
       </div>
     </div>

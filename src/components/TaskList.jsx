@@ -19,15 +19,15 @@ const TaskList = () => {
   }
 
   return (
-    <ul className="list-group mt-3">
+    <ul className="list-group-flush mt-5">
       {tasks.map(({ text, id, state }) => (
         <li key={id} className="list-group-item d-flex">
           <span className="mr-auto">
-            <button type="button" className="btn btn-link" onClick={handleToggleTaskState(id)}>
+            <button type="button" className="btn btn-light" onClick={handleToggleTaskState(id)}>
               {state === 'active' ? text : <s>{text}</s>}
             </button>
           </span>
-          <button type="button" className="close" onClick={handleRemoveTask(id)}>
+          <button type="button" className="btn btn-danger mb-2" onClick={handleRemoveTask(id)}>
             <span>&times;</span>
           </button>
         </li>

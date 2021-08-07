@@ -17,7 +17,7 @@ const TaskForm = () => {
   };
 
   return (
-    <form className="form-inline" onSubmit={handleSubmit}>
+    <form className="form-inline mt-5" onSubmit={handleSubmit}>
       <div className="form-group mx-sm-3">
         <input
           type="text"
@@ -27,7 +27,9 @@ const TaskForm = () => {
           onChange={handleChange}
         />
       </div>
-      <button type="submit" className="btn btn-primary btn-sm">Add</button>
+      <div className="col-12">
+        <button type="submit" className="btn btn-success mt-2 mb-2">Add</button>
+      </div>
     </form>
   );
 };
