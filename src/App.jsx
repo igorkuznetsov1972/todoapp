@@ -8,6 +8,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css';
 function App() {
   return (
     <div className="App">
+      <h1>Your TODO list</h1>
       <TaskForm />
       <FilterList />
       <TaskList />
