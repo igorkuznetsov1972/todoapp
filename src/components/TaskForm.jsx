@@ -15,21 +15,29 @@ const TaskForm = () => {
     e.preventDefault();
     dispatch(addTask({ id: v4(), text, state: 'active' }));
   };
+  const isEmpty = text === '';
 
   return (
     <form className="form-inline mt-5" onSubmit={handleSubmit}>
-      <div className="form-group mx-sm-3">
+      <div className="input-group mb-3">
         <input
           type="text"
           value={text}
           className="form-control"
           placeholder="Enter Task"
+          aria-describedby="button-addon2"
           onChange={handleChange}
         />
+        <button
+          type="submit"
+          className="btn btn-success"
+          id="button-addon2"
+          disabled={isEmpty}
+        >
+          Add
+        </button>
       </div>
-      <div className="col-12">
-        <button type="submit" className="btn btn-success mt-2 mb-2">Add</button>
-      </div>
+
     </form>
   );
 };
