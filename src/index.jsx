@@ -6,7 +6,6 @@ import throttle from 'lodash/throttle';
 import App from './App';
 import store from './store/store';
 import { saveState } from './localStorage';
-// import reportWebVitals from './reportWebVitals';
 
 store.subscribe(throttle(() => {
   saveState({

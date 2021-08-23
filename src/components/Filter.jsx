@@ -39,7 +39,7 @@ const Filter = () => {
   };
 
   return (
-    <div className="container d-grid gap-2">
+    <div className="container d-grid gap-2 p-0">
       <div className="d-grid gap-5 d-sm-flex justify-content-md-start">
         {filters.map(renderFilter)}
       </div>
