@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { v4 } from 'uuid';
 import { inputTaskName } from '../slices/taskName';
@@ -7,6 +7,10 @@ import { addTask } from '../slices/tasks';
 const TaskForm = () => {
   const dispatch = useDispatch();
   const text = useSelector((state) => state.taskName.text);
+  const textInput = useRef();
+  useEffect(() => {
+    textInput.current.focus();
+  });
   const handleChange = (e) => {
     e.preventDefault();
     dispatch(inputTaskName(e.target.value));
@@ -23,6 +27,7 @@ const TaskForm = () => {
         <input
           type="text"
           value={text}
+          ref={textInput}
           className="form-control"
           placeholder="Enter Task"
           aria-describedby="button-addon2"
